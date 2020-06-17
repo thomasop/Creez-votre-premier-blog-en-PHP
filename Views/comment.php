@@ -2,17 +2,17 @@
 
 <?php ob_start(); ?>
         <header>
-            <ul class="">  
-                <li><a href="index.php?action=AfficherAccueil">Accueil</a></li>
-                <li><a href="index.php?action=GetPost">Posts</a></li>
-                <li><a href="index.php?action=AfficherConnexion">Connexion</a></li>
+        <ul class="navbar">  
+                <li class="nav-item active">
+                <a class="nav-link" href="index.php?action=AfficherAccueil">Accueil</a></li>
+                <li class="nav-item active">
+                <a class="nav-link" href="index.php?action=GetPost">Posts</a></li>
                 
-            </ul>
             
             
         </header>
         
-        <p><a href="index.php?action=GetPost">Retour à la liste des billets</a></p>
+        <p><a href="index.php?action=get_post">Retour à la liste des billets</a></p>
         
         <div class="new">
             <?php 
@@ -51,6 +51,15 @@
             
             ?>
         </div>
+
+        <footer>
+            <p>Bienvenue sur mon blog professionel, vous pouvez visiter nos posts <a href="index.php?action=GetPost">ici</a></p>
+            <div>
+                <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+                <script type="IN/Share" data-url="linkedin.com/in/thomas-da-silva-seabra"></script>
+            </div>      
+            <a href="index.php?action=AfficherConnexion">Connexion</a>
+        </footer>
         <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>
