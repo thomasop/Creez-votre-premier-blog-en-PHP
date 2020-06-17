@@ -58,7 +58,7 @@
                 <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
                 <script type="IN/Share" data-url="linkedin.com/in/thomas-da-silva-seabra"></script>
             </div>      
-            <a href="index.php?action=AfficherConnexion">Connexion</a>
+            <a href="index.php?action=admin">Connexion</a>
         </footer>
         <?php $content = ob_get_clean(); ?>
 
