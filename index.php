@@ -30,7 +30,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'get_post') {
                 $HTMLauthor = htmlspecialchars($_POST['author']);
                 $HTMLcomment = htmlspecialchars($_POST['comment']);
                 $addCommentController = new controllercom();
-                $postCommentControlle = $postCommentController->add_comment($HTMLid, $HTMLauthor, $HTMLcomment);
+                $addCommentControlle = $addCommentController->add_comment($HTMLid, $HTMLauthor, $HTMLcomment);
             }
             
         
