@@ -5,7 +5,7 @@ require('vendor/autoload.php');
 
 require_once('App/manager/Manager.php');
 use PDO;
-use App\Entity\post;
+use App\entity\Post;
 class PostManager extends Manager
 {
     public function showPosts() 
@@ -13,7 +13,22 @@ class PostManager extends Manager
         $bd = $this->connection();
         $urlPosts = $bd->prepare('SELECT id, title, content FROM posts ORDER BY id DESC LIMIT 0, 10');
         $urlPosts->execute();
-        return $urlPosts;
+        //$yo = $urlPosts->fetch();
+        //return $yo;
+        $posts = [];
+        while( ($row = $urlPosts->fetch(PDO::FETCH_ASSOC)) !== false)
+        {
+            
+            $post = new Post([
+                'id'=>$row['id'],
+                'title'=>$row['title'],
+                'content'=>$row['content'],
+            ]);
+
+            $posts[] = $post;
+        }
+
+        return $posts;
     }
     public function showPost($postId)
     {
