@@ -1,0 +1,35 @@
+[{
+	"path" : "/blog/",
+	"controller" : "IndexController",
+	"action" : "index",
+	"method" : "GET",
+	"param" : []
+},
+{
+	"path" : "/blog/posts",
+	"controller" : "ControllerPost",
+	"action" : "postsView",
+	"method" : "GET",
+	"param" : []
+},
+{
+	"path" : "/blog/registration",
+	"controller" : "ControllerUser",
+	"action" : "registration",
+	"method" : "GET",
+	"param" : []
+},
+{
+	"path" : "/blog/comment/([0-9]+)",
+	"controller" : "ControllerPost",
+	"action" : "postView",
+	"method" : "GET",
+	"params" : []
+},
+{
+	"path" : "/blog/connect",
+	"controller" : "ControllerUser",
+	"action" : "admin",
+	"method" : "GET",
+	"param" : []
+}]
