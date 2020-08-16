@@ -15,8 +15,8 @@ use App\tool\HttpRequest;
 try{
 $httpRequest = new HttpRequest();
 $router = new Router();
-$httpRequest->setRoute($router->findRoute($httpRequest));
-$httpRequest->run($httpRequest);
+$httprequest->setRoad($router->findRoad($httprequest));
+$httprequest->run();
 	}
 catch(Exception $e)
 {
