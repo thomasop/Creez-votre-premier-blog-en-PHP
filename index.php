@@ -1,17 +1,24 @@
 <?php
 session_start();
+$token = md5(bin2hex(openssl_random_pseudo_bytes(6)));
 
+$_SESSION['token'] = $token;
 require('vendor/autoload.php');
 
 use App\controller\IndexController;
-use App\controller\controllercom;
-use App\controller\controllerpost;
-use App\controller\controlleruser;
-use App\classe\Router;
+use App\controller\ControllerComment;
+use App\controller\ControllerPost;
+use App\controller\ControllerUser;
+use App\tool\Router;
+use App\tool\HttpRequest;
 
-
-
-
-isset($_GET['r']) ? $url = $_GET['r'] : $url = 'index';
-$router = new Router($url);
-$router->renderController();
+try{
+$httpRequest = new HttpRequest();
+$router = new Router();
+$httprequest->setRoad($router->findRoad($httprequest));
+$httprequest->run();
+	}
+catch(Exception $e)
+{
+    echo "erreur";
+}
